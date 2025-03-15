@@ -1,0 +1,73 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fbfcfd;
+}
+
+header {
+    background-color: #fbfcfd;
+}
+
+header .navbar {
+    background-color: #e3f2fd;
+}
+
+header .navbar-brand {
+    color: #3f51b5 !important;
+}
+
+h1 span {
+    color: #d171a1;
+}
+
+.detail {
+    margin-top: 50px;
+}
+
+.detail p {
+    font-size: 1.1rem;
+    color: #6c757d;
+}
+
+footer {
+    background-color: #343a40;
+    color: white;
+}
+
+
+.btn {
+    font-size: 1.1rem;
+    padding: 10px 20px;
+}
+
+
+.progress-bar {
+    background-color: #3f51b5;
+}
+
+
+h2 {
+    font-size: 2rem;
+    color: #3f51b5;
+}
+
+
+
+@media (max-width: 767px) {
+    .image img {
+        width: 150px;
+    }
+
+    .detail h1 {
+        font-size: 1.8rem;
+    }
+
+    .detail p {
+        font-size: 1rem;
+    }
+}
+
+
+
+
+
