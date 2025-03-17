@@ -1,4 +1,4 @@
-// Smooth scrolling for navbar links
+
 document.querySelectorAll('a.nav-link').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -12,10 +12,10 @@ document.querySelectorAll('a.nav-link').forEach(anchor => {
 });
 
 document.getElementById('cvButton').addEventListener('click', function() {
-    const cvUrl = 'assets/SathiyaPriya.pdf';  // Relative path to the CV file
+    const cvUrl = 'assets/SathiyaPriya.pdf';  
     const link = document.createElement('a');
     link.href = cvUrl;
-    link.download = 'SathiyaPriya.pdf';  // Optional: specify the name of the file
+    link.download = 'SathiyaPriya.pdf';  
     link.click();
 });
 
@@ -23,19 +23,19 @@ const form = document.getElementById('form');
 const result = document.getElementById('result');
 
 form.addEventListener('submit', function(e) {
-    // Prevent default form submission
+    
     e.preventDefault();
 
-    // Create FormData object and convert to JSON
+   
     const formData = new FormData(form);
     const object = Object.fromEntries(formData);
     const json = JSON.stringify(object);
 
-    // Show loading message
+    
     result.innerHTML = "Please wait...";
-    result.style.display = "block";  // Make sure result is visible
+    result.style.display = "block";  
 
-    // Submit data using Fetch API
+    
     fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: {
@@ -47,19 +47,19 @@ form.addEventListener('submit', function(e) {
     .then(async (response) => {
         const jsonResponse = await response.json();
         if (response.status === 200) {
-            result.innerHTML = jsonResponse.message; // Success message
+            result.innerHTML = jsonResponse.message; 
         } else {
-            result.innerHTML = jsonResponse.message; // Error message
+            result.innerHTML = jsonResponse.message; 
         }
     })
     .catch(error => {
         console.log(error);
-        result.innerHTML = "Something went wrong!"; // Show error if something goes wrong
+        result.innerHTML = "Something went wrong!"; 
     })
     .finally(() => {
-        form.reset(); // Reset the form after submission
+        form.reset(); 
         setTimeout(() => {
-            result.style.display = "none"; // Hide the result message after a while
+            result.style.display = "none"; 
         }, 3000);
     });
 });
